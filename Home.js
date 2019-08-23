@@ -38,7 +38,7 @@ getUserDetails() {
       </section>
       <section>
        <span> {this.state.output.toString()} </span>
-       <ReactJson src={this.state.output} />
+       
       </section>
       </div>
     ) 
