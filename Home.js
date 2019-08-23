@@ -44,13 +44,14 @@ getUserDetails() {
       </div>
       <div className="col-sm-6">
       <section>
-       <ReactJson src={this.state.output.data} theme="monokai" />
+       <UserProfile userDetails={this.state.output.data} />
+      
       </section>
       </div>
       </div>
       <div className="row">
-        <div className="col-sm-4">
-            <UserProfile userDetails={this.state.output.data} />
+        <div className="col-sm-12">
+             <ReactJson src={this.state.output.data} theme="monokai" />
         </div>
       </div>
       </div>

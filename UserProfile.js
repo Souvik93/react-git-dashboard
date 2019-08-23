@@ -15,7 +15,14 @@ export default class UserProfile extends Component {
             <span> {this.props.userDetails.name} </span>
           </h4>
           <h4>
+            
+             <span> {this.props.userDetails.login} </span>
+          </h4>
+          <h4>
             <span> {this.props.userDetails.bio} </span>
+          </h4>
+          <h4>
+            <span> {this.props.userDetails.location} </span>
           </h4>
         </section>
       </div>
