@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {getUserData} from './git-service';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactJson from 'react-json-view';
-import HeroSearchView from './UserProfile';
+import UserProfile from './UserProfile';
 
 export class Home extends Component {
   constructor() {
-     this.state = {output : 'No Result Found....'}
+     this.state = {output :{data: ''}}
   }
     handleSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ getUserDetails() {
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>
        <FormGroup>
-       <Input type="text" name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
+       <input type="text" className="form-control" name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
       </FormGroup>
        <Button color="info">Go !</Button>
       </Form >
@@ -50,7 +50,7 @@ getUserDetails() {
       </div>
       <div className="row">
         <div className="col-sm-4">
-            <HeroSearchView />
+            <UserProfile userDetails={this.state.output.data} />
         </div>
       </div>
       </div>

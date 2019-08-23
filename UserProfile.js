@@ -1,24 +1,13 @@
+
 import React, { Component } from 'react';
 
-export default class UserProfile extends Componenet {
-
-
-
-
-
-
-
-
-
-
-
-  
+export default class UserProfile extends Component {
   render () {
     return (
       <div>
         <section>
           <img
-            src={user.avatar_url}
+            src={this.props.userDetails.avatar_url}
             className="img-rounded img-responsive"
             alt="User Avatar"
           />
@@ -26,16 +15,4 @@ export default class UserProfile extends Componenet {
       </div>
     )
   }
-}
-
-export default class HeroSearchView extends Component {
-
-    render() {
-
-        return (
-            <div className='row'>
-                hello
-            </div>
-        );
-    }
 }
