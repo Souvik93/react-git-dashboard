@@ -6,11 +6,14 @@ export default class UserProfile extends Component {
     return (
       <div>
         <section>
+        <div className="col-sm-4">
           <img
             src={this.props.userDetails.avatar_url}
             className="rounded-circle img-responsive"
             alt="User Avatar"
           />
+          </div>
+          <div className="col-sm-8">
           <h4>
             <span> {this.props.userDetails.name} </span>
           </h4>
@@ -24,6 +27,7 @@ export default class UserProfile extends Component {
           <h4>
             <span> {this.props.userDetails.location} </span>
           </h4>
+          </div>
         </section>
       </div>
     )
