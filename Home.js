@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {getUserData} from './git-service';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import ReactJson from 'react-json-view'
+import ReactJson from 'react-json-view';
 
 export class Home extends Component {
   constructor() {
