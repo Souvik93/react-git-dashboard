@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getUserData} from './git-service';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactJson from 'react-json-view';
+import { UserProfile } from './UserProfile';
 
 export class Home extends Component {
   constructor() {
@@ -27,7 +28,11 @@ getUserDetails() {
   render() {
     return (
       <div>
+      <div className="row">
+      <div className="col-sm-12">
       <p> My First React Component </p> 
+      </div>
+      <div className="col-sm-6">
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>
        <FormGroup>
@@ -36,10 +41,18 @@ getUserDetails() {
        <Button color="info">Go !</Button>
       </Form >
       </section>
+      </div>
+      <div className="col-sm-6">
       <section>
-       <span> {this.state.output.toString()} </span>
-       
+       <ReactJson src={this.state.output.data} theme="monokai" />
       </section>
+      </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-4">
+            <UserProfile />
+        </div>
+      </div>
       </div>
     ) 
   }
