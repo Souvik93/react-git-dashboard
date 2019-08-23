@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {getUserData} from './git-service';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactJson from 'react-json-view';
-import { UserProfile } from './UserProfile';
+import HeroSearchView from './UserProfile';
 
 export class Home extends Component {
   constructor() {
@@ -50,7 +50,7 @@ getUserDetails() {
       </div>
       <div className="row">
         <div className="col-sm-4">
-            <UserProfile />
+            <HeroSearchView />
         </div>
       </div>
       </div>

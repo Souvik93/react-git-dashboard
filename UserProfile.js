@@ -1,6 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-export class UserProfile extends Componenet {
+export default class UserProfile extends Componenet {
+
+
+
+
+
+
+
+
+
+
+
+  
   render () {
     return (
       <div>
@@ -14,4 +26,16 @@ export class UserProfile extends Componenet {
       </div>
     )
   }
+}
+
+export default class HeroSearchView extends Component {
+
+    render() {
+
+        return (
+            <div className='row'>
+                hello
+            </div>
+        );
+    }
 }
