@@ -8,9 +8,15 @@ export default class UserProfile extends Component {
         <section>
           <img
             src={this.props.userDetails.avatar_url}
-            className="img-rounded img-responsive"
+            className="rounded-circle img-responsive"
             alt="User Avatar"
           />
+          <h4>
+            <span> {this.props.userDetails.name} </span>
+          </h4>
+          <h4>
+            <span> {this.props.userDetails.bio} </span>
+          </h4>
         </section>
       </div>
     )
