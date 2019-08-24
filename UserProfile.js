@@ -7,7 +7,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
-import PlaceIcon from '@material-ui/icons/Place';
 
 export default class UserProfile extends Component {
   render() {
@@ -57,7 +56,7 @@ export default class UserProfile extends Component {
               <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <PlaceIcon />
+                  <WorkIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary="Location" secondary={this.props.userDetails.location} />
