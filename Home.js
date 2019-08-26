@@ -3,6 +3,7 @@ import {getUserData} from './git-service';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactJson from 'react-json-view';
 import UserProfile from './UserProfile';
+import RepoDetails from './RepoDetails';
 
 export class Home extends Component {
   constructor() {
@@ -32,7 +33,7 @@ getUserDetails() {
       <div className="col-sm-12">
       <p> My First React Component </p> 
       </div>
-      <div className="col-sm-6">
+      <div className="col-sm-4">
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>
        <FormGroup>
@@ -42,11 +43,14 @@ getUserDetails() {
       </Form >
       </section>
       </div>
-      <div className="col-sm-6">
+      <div className="col-sm-4">
       <section>
        <UserProfile userDetails={this.state.output.data} />
       
       </section>
+      </div>
+      <div className="col-sm-4">
+      <RepoDetails />
       </div>
       </div>
       <div className="row">

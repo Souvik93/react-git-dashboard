@@ -7,8 +7,11 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
+import Grow from '@material-ui/core/Grow';
 
 export default class UserProfile extends Component {
+
+  
   render() {
     return (
       <div>
@@ -21,7 +24,9 @@ export default class UserProfile extends Component {
             />
           </div>
           <div className="col-md-8">
+            <Grow in={true}>
             <ListItem>
+             
               <ListItemAvatar>
                 <Avatar>
                   <ImageIcon />
@@ -29,6 +34,8 @@ export default class UserProfile extends Component {
               </ListItemAvatar>
               <ListItemText primary="Name" secondary={this.props.userDetails.name} />
             </ListItem>
+            </Grow>
+        
             <Divider variant="inset" />
 
               <ListItem>
@@ -39,7 +46,7 @@ export default class UserProfile extends Component {
               </ListItemAvatar>
               <ListItemText primary="Work" secondary={this.props.userDetails.company} />
             </ListItem>
-
+            
             <Divider variant="inset"/>
 
               <ListItem>
