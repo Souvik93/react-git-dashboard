@@ -31,7 +31,7 @@ getRepoDetails(userNAme) {
       <div className="col-sm-12">
         <RepoFilter />
       </div>
-      <div className= "col-sm-12"> <RepoLists/> </div>
+      <div className= "col-sm-12" repoLists={this.state.repoLists}> <RepoLists/> </div>
       </div>
     );
   }
