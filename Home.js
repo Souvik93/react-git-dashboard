@@ -7,13 +7,16 @@ import RepoDetails from './RepoDetails';
 
 export class Home extends Component {
   constructor() {
-     this.state = {output :{data: ''}}
+     this.state = {output :{data: ''},
+     userName: ''
+     }
   }
     handleSubmit = (e) => {
     e.preventDefault();
     // this.context.router.push({pathname: `/${this._input.value}`});
     const data = new FormData(e.target);
     console.log(this._input.value);
+    this.setState({userName: this._input.value})
     this.getUserDetails();
 
   }
@@ -50,7 +53,7 @@ getUserDetails() {
       </section>
       </div>
       <div className="col-sm-4">
-      <RepoDetails />
+      <RepoDetails userName={this.state.userName} />
       </div>
       </div>
       <div className="row">
