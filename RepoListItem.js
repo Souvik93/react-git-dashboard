@@ -4,9 +4,9 @@ export default class RepoListItem extends Component {
   render() {
     return (
       <div>
-          <span>Hey There !! From RepoListItem Componenet....</span>
           <li>
-           {this.props.repo.name}
+          <span> <a href={this.props.repo.html_url} target="_blank"> {this.props.repo.name} </a> </span>
+          <hr />
           </li>
       </div>
     );

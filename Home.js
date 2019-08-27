@@ -31,7 +31,7 @@ getUserDetails() {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
       <div className="row">
       <div className="col-sm-12">
       <p> My First React Component </p> 

@@ -5,7 +5,7 @@ import { getRepoData } from './git-service';
 export default class RepoDetails extends Component {
 
   constructor() {
-    this.state = {repoLists:[]};
+    this.state = {'repoLists':[]};
   }
 
 componentDidUpdate(prevProps, prevState) {
@@ -17,9 +17,11 @@ componentDidUpdate(prevProps, prevState) {
 
 getRepoDetails(userNAme) {
   getRepoData(userNAme).then(resp => {
-    console.log("Hey There !! From getRepoDetails() Method");
-    console.log(resp);
-    this.setState({repoLists:resp});
+
+    this.setState({'repoLists':resp.data});
+    console.log("Hey There !!!! From getRepoDetails() Method");
+    console.log(this.state.repoLists);
+   
   })
 
 }
@@ -31,7 +33,7 @@ getRepoDetails(userNAme) {
       <div className="col-sm-12">
         <RepoFilter />
       </div>
-      <div className= "col-sm-12" repoLists={this.state.repoLists}> <RepoLists/> </div>
+      <div className= "col-sm-12"> <RepoLists repoLists={this.state.repoLists}/> </div>
       </div>
     );
   }
