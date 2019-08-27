@@ -45,7 +45,6 @@ handleFilterUpdate = (filter) => {
   render() {
     return (
       <div>
-      <span>Hey There!! This Repo Details Component....</span>
       <div className="col-sm-12">
         <RepoFilter onUpdateFilter={this.handleFilterUpdate} />
       </div>
