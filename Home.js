@@ -26,7 +26,7 @@ getUserDetails() {
     console.log("Hey There !! From getUserDetails Method");
     console.log(resp.data);
     this.setState({output: resp});
-  });
+  }); 
 }
 
   render() {

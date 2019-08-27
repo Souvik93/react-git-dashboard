@@ -26,12 +26,28 @@ getRepoDetails(userNAme) {
 
 }
 
+handleFilterUpdate = (filter) => {
+  console.log("Hey There !! From Handle Filter Method");
+  console.log(filter);
+  this.setState({'repoLists': this.state.repoLists.filter(
+    repoDetails => {
+      return !filter || (repoDetails.name && repoDetails.name.toLowerCase().includes(filter))
+    }
+  )});
+
+  console.log("Hey There !! After handleFilterUpdate Method");
+  console.log(this.state.repoLists);
+
+}
+
+
+
   render() {
     return (
       <div>
       <span>Hey There!! This Repo Details Component....</span>
       <div className="col-sm-12">
-        <RepoFilter />
+        <RepoFilter onUpdateFilter={this.handleFilterUpdate} />
       </div>
       <div className= "col-sm-12"> <RepoLists repoLists={this.state.repoLists}/> </div>
       </div>
