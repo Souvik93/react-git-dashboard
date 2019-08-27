@@ -19,7 +19,7 @@ export default class UserProfile extends Component {
           <div className="col-md-4">
             <img
               src={this.props.userDetails.avatar_url}
-              className="rounded-circle img-responsive"
+              className="rounded-circle img-responsive git-img"
               alt="User Avatar"
             />
           </div>
