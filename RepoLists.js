@@ -16,9 +16,9 @@ export default class RepoLists extends Component {
     return (
         <div>
         <span>Repository Details.</span>
-         <ul className="list-unstyled">
+         <ul className="list-unstyled" style={{'overflow-y': 'auto', 'height': '650px'}}>
        
-          {this.props.repoLists.map((object, i) => <RepoListItem repo={object} key={object.id} />)}
+          {this.props.repoLists.map((object, i) => <RepoListItem repo={object} key={object.id} indexNo={i} />)}
 
           </ul>
       </div>
