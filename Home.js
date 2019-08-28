@@ -44,12 +44,9 @@ handleInputChange = (event) => {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div >
        <Spinner isVisible={this.state.isPending}/>
       <div className="row">
-      <div className="col-sm-12">
-      <p> My First React Component </p> 
-      </div>
       <div className="col-sm-4">
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>

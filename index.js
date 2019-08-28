@@ -15,12 +15,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-        <p> Yes I am Editing.</p>
+        <h6>
+          Start searching with Git User Name.... :)
+        </h6>
         <Home/>
       </div>
     );
