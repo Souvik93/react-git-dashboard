@@ -5,12 +5,17 @@ import ReactJson from 'react-json-view';
 import UserProfile from './UserProfile';
 import RepoDetails from './RepoDetails';
 import Spinner from './Spinner';
+import Notification from './Notification';
 
 export class Home extends Component {
   constructor() {
      this.state = {output :{data: ''},
      userName: '',
-     isPending: false
+     isPending: false,
+     notifyUser: false,
+     uName: '',
+     status: '',
+     networkMessage: ''
      }
   }
     handleSubmit = (e) => {
@@ -31,29 +36,44 @@ getUserDetails() {
     this.setState({
       output: resp,
       isPending: false});
+    this.showNotification(true,'success',"Search Successful.... :)");
   })
   .catch(err => {
     alert("Sommer Error Occured While Fetching Git User Details");
     this.setState({isPending: false});
+     this.showNotification(true,'danger',"Sommer Error Occured While Fetching Git User Details");
   }); 
 }
 
 handleInputChange = (event) => {
-  this.setState({'userName': event.target.value})
+  this.setState({'uName': event.target.value})
+}
+
+showNotification(flagValue, status, msg) {
+  this.setState({'notifyUser':flagValue, 'status':status,'networkMessage': msg});
+}
+
+toggleHandler = (event) => {
+  this.setState({'notifyUser':!this.state.notifyUser});
 }
 
   render() {
     return (
       <div >
-       <Spinner isVisible={this.state.isPending}/>
+      <div className="row">
+      <div className="col-sm-12">
+          <Notification show={this.state.notifyUser} status={this.state.status} message={this.state.networkMessage} toggleHandler={this.toggleHandler}/>
+          <Spinner isVisible={this.state.isPending}/>
+      </div>
+      </div>
       <div className="row">
       <div className="col-sm-4">
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>
        <FormGroup>
-       <input type="text" className="form-control" value={this.state.userName} onChange={this.handleInputChange} name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
+       <input type="text" className="form-control" value={this.state.uName} onChange={this.handleInputChange} name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
       </FormGroup>
-       <Button color="info" disabled={!this.state.userName}>Go !</Button>
+       <Button color="info" disabled={!this.state.uName}>Go !</Button>
       </Form >
       </section>
       </div>
