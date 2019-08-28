@@ -8,14 +8,15 @@ import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
 import Grow from '@material-ui/core/Grow';
+import { Badge, ListGroup, ListGroupItem } from 'reactstrap';
 
 export default class UserProfile extends Component {
 
-  
+
   render() {
     return (
       <div>
-       
+
         <section>
           <div className="col-md-4">
             <img
@@ -26,20 +27,20 @@ export default class UserProfile extends Component {
           </div>
           <div className="col-md-8">
             <Grow in={true}>
-            <ListItem>
-             
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Name" secondary={this.props.userDetails.name} />
-            </ListItem>
+              <ListItem>
+
+                <ListItemAvatar>
+                  <Avatar>
+                    <ImageIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Name" secondary={this.props.userDetails.name} />
+              </ListItem>
             </Grow>
-        
+
             <Divider variant="inset" />
 
-              <ListItem>
+            <ListItem>
               <ListItemAvatar>
                 <Avatar>
                   <WorkIcon />
@@ -47,10 +48,10 @@ export default class UserProfile extends Component {
               </ListItemAvatar>
               <ListItemText primary="Work" secondary={this.props.userDetails.company} />
             </ListItem>
-            
-            <Divider variant="inset"/>
 
-              <ListItem>
+            <Divider variant="inset" />
+
+            <ListItem>
               <ListItemAvatar>
                 <Avatar>
                   <ImageIcon />
@@ -61,7 +62,7 @@ export default class UserProfile extends Component {
 
             <Divider variant="inset" />
 
-              <ListItem>
+            <ListItem>
               <ListItemAvatar>
                 <Avatar>
                   <WorkIcon />
@@ -70,7 +71,17 @@ export default class UserProfile extends Component {
               <ListItemText primary="Location" secondary={this.props.userDetails.location} />
             </ListItem>
           </div>
+
+
         </section>
+
+        <div className="col-sm-12">
+
+          <ListGroup>
+            <ListGroupItem className="justify-content-between">Following <Badge pill>{this.props.userDetails.following}</Badge></ListGroupItem>
+            <ListGroupItem className="justify-content-between">Followers <Badge pill>{this.props.userDetails.followers}</Badge></ListGroupItem>
+          </ListGroup>
+        </div>
       </div>
     )
   }
