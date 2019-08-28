@@ -78,8 +78,8 @@ export default class UserProfile extends Component {
         <div className="col-sm-12">
 
           <ListGroup>
-            <ListGroupItem className="justify-content-between">Following <Badge pill>{this.props.userDetails.following}</Badge></ListGroupItem>
-            <ListGroupItem className="justify-content-between">Followers <Badge pill>{this.props.userDetails.followers}</Badge></ListGroupItem>
+            <ListGroupItem className="justify-content-between">Following <Badge href={this.props.userDetails.following_url} color="primary" pill>{this.props.userDetails.following}</Badge></ListGroupItem>
+            <ListGroupItem className="justify-content-between">Followers <Badge href={this.props.userDetails.followers_url} color="info" pill>{this.props.userDetails.followers}</Badge></ListGroupItem>
           </ListGroup>
         </div>
       </div>
