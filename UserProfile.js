@@ -15,6 +15,7 @@ export default class UserProfile extends Component {
   render() {
     return (
       <div>
+       
         <section>
           <div className="col-md-4">
             <img

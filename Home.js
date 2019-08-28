@@ -4,11 +4,13 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactJson from 'react-json-view';
 import UserProfile from './UserProfile';
 import RepoDetails from './RepoDetails';
+import Spinner from './Spinner';
 
 export class Home extends Component {
   constructor() {
      this.state = {output :{data: ''},
-     userName: ''
+     userName: '',
+     isPending: false
      }
   }
     handleSubmit = (e) => {
@@ -22,16 +24,28 @@ export class Home extends Component {
   }
 
 getUserDetails() {
+  this.setState({isPending: true});
   getUserData(this._input.value).then(resp => {
     console.log("Hey There !! From getUserDetails Method");
     console.log(resp.data);
-    this.setState({output: resp});
+    this.setState({
+      output: resp,
+      isPending: false});
+  })
+  .catch(err => {
+    alert("Sommer Error Occured While Fetching Git User Details");
+    this.setState({isPending: false});
   }); 
+}
+
+handleInputChange = (event) => {
+  this.setState({'userName': event.target.value})
 }
 
   render() {
     return (
       <div className="container-fluid">
+       <Spinner isVisible={this.state.isPending}/>
       <div className="row">
       <div className="col-sm-12">
       <p> My First React Component </p> 
@@ -40,9 +54,9 @@ getUserDetails() {
       <section className="con-home">
       <Form onSubmit={this.handleSubmit}>
        <FormGroup>
-       <input type="text" className="form-control" name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
+       <input type="text" className="form-control" value={this.state.userName} onChange={this.handleInputChange} name="userName" id="uName" placeholder="Enter A Git Hub User" ref={ref => (this._input = ref)} />
       </FormGroup>
-       <Button color="info">Go !</Button>
+       <Button color="info" disabled={!this.state.userName}>Go !</Button>
       </Form >
       </section>
       </div>
